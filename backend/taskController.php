@@ -35,4 +35,34 @@
 
         header("Location: ../task/index.php");
     }
+    elseif($action == "edit"){
+        $title = $_POST['titel'];
+        $discription = $_POST['discription'];
+        $status = $_POST['status'];
+        $id = $_POST['id'];
+        $department = $_POST['department'];
+
+        require_once("conn.php");
+        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving WHERE id = :id";
+        $statement = $conn->prepare($query);
+        $statement->execute([
+            ":titel" => $title,
+            ":beschrijving" => $discription,
+            ":status" => $status,
+            ":id" => $id,
+            ":afdeling" => $department
+        ]);
+        header("Location: ../task/index.php");
+
+    }
+    elseif($action == "delete"){
+        $id = $_POST['id'];
+
+        require_once("conn.php");
+        $query = "DELETE FROM taken WHERE id = :id";
+        $statement = $conn->prepare($query);
+        $statement->execute([ ":id" => $id]);
+
+        header("Location: ../task/index.php");
+    }
 ?>

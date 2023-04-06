@@ -9,6 +9,38 @@
 </head>
 <body>
     <?php require_once("../header.php"); ?>
+
+    <?php 
+        require_once("../backend/conn.php");
+        $query = "SELECT * FROM taken WHERE status <> 'done'";
+        $statement = $conn->prepare($query);
+        $statement->execute();
+
+        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+    ?>
+
+    <!-- Table for displaying tasks -->
+    <table>
+        <tr>
+            <th>Titel</th>
+            <th>Afdeling</th>
+            <th>Status</th>
+            <th>Edit</th>
+        </tr>
+        <?php foreach($tasks as $task): ?>
+            <tr>
+                <td><?php echo($task['titel']) ?></td>
+                <td><?php echo($task['afdeling']) ?></td>
+                <td><?php echo($task['status']) ?></td>
+                <td><a href="edit.php?id=<?php echo $task['id'] ?>">Edit</a></td>
+            </tr>
+        <?php endforeach ?>
+    </table>
+
+
+
+
+
 </body>
 </html>
 
