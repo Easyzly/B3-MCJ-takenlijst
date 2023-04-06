@@ -7,12 +7,9 @@
 </head>
 
 <body>
-    
-    <div class="container">
-
-
-    </div>
-
+    <nav>
+        <?php require_once("header.php"); ?>
+    </nav>
 </body>
 
 </html>
