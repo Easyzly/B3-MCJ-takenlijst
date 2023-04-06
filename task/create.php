@@ -33,6 +33,10 @@
             <label for="discription">beschrijving: </label>
             <input type="text" name="discription" id="discription">
         </div>
+        <div class="form-group">
+            <label for="deadline">deadline: </label>
+            <input type="date" name="deadline" id="deadline">
+        </div>
         
         <input type="submit" value="submit">
     </form>

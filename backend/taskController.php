@@ -7,6 +7,7 @@
         $titel = $_POST['titel'];
         $discription = $_POST['discription'];
         $department = $_POST['department'];
+        $deadline = $_POST['deadline'];
 
         // Check for empty inputs
         if(empty($titel)){
@@ -24,13 +25,20 @@
             die();
         }
 
+        if(empty($deadline)){
+            header("Location: ../task/create.php?msg=Geen afdeling opgegeven");
+            die();
+        }
+
+
         require_once("conn.php");
-        $query = "INSERT INTO taken(titel, beschrijving, afdeling) VALUES (:titel, :beschrijving, :afdeling)";
+        $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline) VALUES (:titel, :beschrijving, :afdeling,:deadline)";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":titel" => $titel,
             ":beschrijving" => $discription,
-            ":afdeling" => $department
+            ":afdeling" => $department,
+            ":deadline" => $deadline
         ]);
 
         header("Location: ../task/index.php");
@@ -41,16 +49,19 @@
         $status = $_POST['status'];
         $id = $_POST['id'];
         $department = $_POST['department'];
+        $deadline = $_POST['deadline'];
+
 
         require_once("conn.php");
-        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving WHERE id = :id";
+        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving, deadline = :deadline WHERE id = :id";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":titel" => $title,
             ":beschrijving" => $discription,
             ":status" => $status,
             ":id" => $id,
-            ":afdeling" => $department
+            ":afdeling" => $department,
+            ":deadline" => $deadline
         ]);
         header("Location: ../task/index.php");
 

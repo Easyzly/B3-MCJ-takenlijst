@@ -42,6 +42,10 @@
                 <option value="todo">todo</option>
             </select>
         </div>
+        <div class="form-group">
+            <label for="deadline">deadline: </label>
+            <input type="date" name="deadline" id="deadline" value="<?php echo($task['deadline']); ?>">
+        </div>
         
         <input type="submit" value="edit">
     </form>

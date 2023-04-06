@@ -12,7 +12,7 @@
 
     <?php 
         require_once("../backend/conn.php");
-        $query = "SELECT * FROM taken WHERE status <> 'done'";
+        $query = "SELECT * FROM taken WHERE status <> 'done' ORDER BY deadline";
         $statement = $conn->prepare($query);
         $statement->execute();
 
@@ -25,6 +25,7 @@
             <th>Titel</th>
             <th>Afdeling</th>
             <th>Status</th>
+            <th>deadline</th>
             <th>Edit</th>
         </tr>
         <?php foreach($tasks as $task): ?>
@@ -32,6 +33,7 @@
                 <td><?php echo($task['titel']) ?></td>
                 <td><?php echo($task['afdeling']) ?></td>
                 <td><?php echo($task['status']) ?></td>
+                <td><?php echo($task['deadline']) ?> </td>
                 <td><a href="edit.php?id=<?php echo $task['id'] ?>">Edit</a></td>
             </tr>
         <?php endforeach ?>
