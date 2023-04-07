@@ -11,11 +11,30 @@
     <body>
         <?php require_once("../header.php"); ?>
 
+        <div class="department-buttons">
+            <a href="afdeling.php?afdeling=Horeca">Horeca</a>
+            <a href="afdeling.php?afdeling=Personeel">Personeel</a>
+            <a href="afdeling.php?afdeling=Techniek">Techniek</a>
+            <a href="afdeling.php?afdeling=Inkoop">Inkoop</a>
+            <a href="afdeling.php?afdeling=Klantenservice">Klantenservice</a>
+            <a href="afdeling.php?afdeling=Groen">Groen</a>
+        </div>
+
+        <?php
+            
+            if($_GET['afdeling'] == null or !isset($_GET['afdeling'])){
+                header("Location: afdeling.php?afdeling=Horeca");
+            }
+            else{
+                $afdeling = $_GET['afdeling'];
+            }
+        
+        ?>
         <?php 
             require_once("../backend/conn.php");
-            $query = "SELECT * FROM taken WHERE status <> 'done' ORDER BY deadline";
+            $query = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY deadline";
             $statement = $conn->prepare($query);
-            $statement->execute();
+            $statement->execute([ ":afdeling" => $afdeling]);
 
             $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
         ?>
