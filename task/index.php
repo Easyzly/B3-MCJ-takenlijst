@@ -19,7 +19,6 @@
             $statement->execute([ ":id" => $idChecker]);
     
             $userAccount = $statement->fetch(PDO::FETCH_ASSOC);
-            echo($userAccount['username']);
         }
         else{
             header("Location: ../accountSignin&Signup.php?msg=U bent nog niet ingelogd");

@@ -20,7 +20,7 @@
 
         if($userAccount && password_verify($password,$userAccount['password'])){
             $_SESSION['id'] = $userAccount['id'];
-            header("Location: ../index.php?msg=login succes");
+            header("Location: ../userPage.php");
         }
         else{
             session_abort();
@@ -37,6 +37,23 @@
         else{
             header("Location: ../accountSignin&Signup.php?msg=You must be logged in");
         }
+    }
+
+    if($action == "Signup"){
+        if(isset($_POST['username'])){ $username = $_POST['username']; } else{ header("Location: ../accountSignin&Signup.php?msg=no username assigned"); }
+        if(isset($_POST['name'])){ $name = $_POST['name']; } else{ header("Location: ../accountSignin&Signup.php?msg=no name assigned"); }
+        if(isset($_POST['password'])){ $password = $_POST['password']; } else{ header("Location: ../accountSignin&Signup.php?msg=no password assigned"); }
+
+        require_once("conn.php");
+        $query = "INSERT INTO users(naam,password,username) VALUES(:name,:password,:username)";
+        $statement = $conn->prepare($query);
+        $statement->execute([
+            ":naam" => $name,
+            ":password" => $password,
+            ":username" => $username
+        ]);
+
+        header("Location: ../userPage.php");
     }
     
 ?>

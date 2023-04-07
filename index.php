@@ -14,7 +14,6 @@
                 $statement->execute([ ":id" => $idChecker]);
         
                 $userAccount = $statement->fetch(PDO::FETCH_ASSOC);
-                echo($userAccount['username']);
             }
         ?>
 </head>
