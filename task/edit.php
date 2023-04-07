@@ -1,5 +1,25 @@
-<?php 
+<head>
+    <?php 
+        session_start();
+        if(isset($_SESSION['id'])){
+            $idChecker = $_SESSION['id'];
 
+            require_once("../backend/conn.php");
+            $query = "SELECT * FROM users WHERE id=:id";
+            $statement = $conn->prepare($query);
+            $statement->execute([ ":id" => $idChecker]);
+
+            $userAccount = $statement->fetch(PDO::FETCH_ASSOC);
+            echo($userAccount['username']);
+        }
+        else{
+            header("Location: ../accountSignin&Signup.php?msg=U bent nog niet ingelogd");
+        }
+    ?>
+</head>
+
+
+<?php 
     require_once("../backend/conn.php");
 
     $id = $_GET['id'];
@@ -45,8 +65,7 @@
         <div class="form-group">
             <label for="deadline">deadline: </label>
             <input type="date" name="deadline" id="deadline" value="<?php echo($task['deadline']); ?>">
-        </div>
-        
+        </div>        
         <input type="submit" value="edit">
     </form>
 

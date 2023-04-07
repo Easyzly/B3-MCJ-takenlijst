@@ -1,8 +1,22 @@
 <!doctype html>
 <html lang="nl">
+<?php session_start(); ?>
 <head>
     <title></title>
     <?php require_once 'head.php'; ?>
+    <?php 
+            if(isset($_SESSION['id'])){
+                $idChecker = $_SESSION['id'];
+
+                require_once("backend/conn.php");
+                $query = "SELECT * FROM users WHERE id=:id";
+                $statement = $conn->prepare($query);
+                $statement->execute([ ":id" => $idChecker]);
+        
+                $userAccount = $statement->fetch(PDO::FETCH_ASSOC);
+                echo($userAccount['username']);
+            }
+        ?>
 </head>
 <body>
     <main>
@@ -20,6 +34,10 @@
                 
             </div>
         </div>
+
+        
+
+
     </main>
     <footer>
 
