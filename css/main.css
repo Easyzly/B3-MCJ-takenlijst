@@ -288,3 +288,60 @@ label{
   }
 }
 
+/* CSS Martijn */
+
+*{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'Heartbeat';
+  src:  url("../fonts/heartbeat.eot") format('eot'),
+        url("../fonts/heartbeat.otf") format('otf'),
+        url("../fonts/heartbeat.woff") format('woff'),
+        url("../fonts/heartbeat.svg") format('svg'),
+        url("../fonts/heartbeat.ttf") format('ttf');
+}
+
+.background{
+  background-image: url('../img/park01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(43, 43, 43, 0.5);
+  padding: 10px 2%;
+  align-items: center;
+}
+
+.navButtons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.navButtons a{
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 25px;
+}
+
+.heartbeatLogo{
+  font-family: 'Heartbeat';
+  color: #27AE60;
+  text-decoration: none;
+  font-size: 36px;
+  text-shadow: 3px 3px 0 #FCFCFC, -1px -1px 0 #FCFCFC, 1px -1px 0 #FCFCFC, -1px 1px 0 #FCFCFC, 1px 1px 0 #FCFCFC;
+}
+
+.imageButton{
+  width: 200px;
+  height: 200px;
+  background-image: url("../img/park01.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
