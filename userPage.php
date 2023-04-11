@@ -27,60 +27,62 @@
 
 
     <body>
+        <header>
+            <?php require_once('header.php') ?>
+        </header>
+
         <!-- User settings and details -->
         <form action="backend/accountController.php" method="post">
             <input type="hidden" name="action" value="Logout">
             <input type="submit" value="logout">
         </form>
 
-
         <!-- Afdeling selector  -->
         <div class="department-buttons">
-                    <a href="userPage.php?afdeling=Horeca">Horeca</a>
-                    <a href="userPage.php?afdeling=Personeel">Personeel</a>
-                    <a href="userPage.php?afdeling=Techniek">Techniek</a>
-                    <a href="userPage.php?afdeling=Inkoop">Inkoop</a>
-                    <a href="userPage.php?afdeling=Klantenservice">Klantenservice</a>
-                    <a href="userPage.php?afdeling=Groen">Groen</a>
-                    <a href="userPage.php?afdeling=noFilter">Alle</a>
-                    <a href="userPage.php?afdeling=User">Persoonlijke taken</a>
-                </div>
-
-            	<!-- Afdeling checker -->
-                <?php      
-                    if($_GET['afdeling'] == null or !isset($_GET['afdeling'])){
-                        header("Location: userPage.php?afdeling=Horeca");
-                    }
-                    elseif($_GET['afdeling'] == "noFilter"){
-                        require_once("backend/conn.php");
-                        $query = "SELECT * FROM taken ORDER BY deadline";
-                        $statement = $conn->prepare($query);
-                        $statement->execute();
-    
-                        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                    }
-                    elseif($_GET['afdeling'] == "User"){
-                        require_once("backend/conn.php");
-                        $query = "SELECT * FROM taken WHERE id = :id ORDER BY deadline";
-                        $statement = $conn->prepare($query);
-                        $statement->execute([ ":id" => $userAccount['id']]);
-    
-                        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                    }
-                    else{
-                        $afdeling = $_GET['afdeling'];
-
-                        require_once("backend/conn.php");
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY deadline";
-                        $statement = $conn->prepare($query);
-                        $statement->execute([ ":afdeling" => $afdeling]);
-    
-                        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                    }
-                
-                ?>
-
+            <a href="userPage.php?afdeling=Horeca">Horeca</a>
+            <a href="userPage.php?afdeling=Personeel">Personeel</a>
+            <a href="userPage.php?afdeling=Techniek">Techniek</a>
+            <a href="userPage.php?afdeling=Inkoop">Inkoop</a>
+            <a href="userPage.php?afdeling=Klantenservice">Klantenservice</a>
+            <a href="userPage.php?afdeling=Groen">Groen</a>
+            <a href="userPage.php?afdeling=noFilter">Alle</a>
+            <a href="userPage.php?afdeling=User">Persoonlijke taken</a>
         </div>
+
+        <!-- Afdeling checker -->
+        <?php      
+            if($_GET['afdeling'] == null or !isset($_GET['afdeling'])){
+                header("Location: userPage.php?afdeling=Horeca");
+            }
+            elseif($_GET['afdeling'] == "noFilter"){
+                require_once("backend/conn.php");
+                $query = "SELECT * FROM taken ORDER BY deadline";
+                $statement = $conn->prepare($query);
+                $statement->execute();
+
+                $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            elseif($_GET['afdeling'] == "User"){
+                require_once("backend/conn.php");
+                $query = "SELECT * FROM taken WHERE id = :id ORDER BY deadline";
+                $statement = $conn->prepare($query);
+                $statement->execute([ ":id" => $userAccount['id']]);
+
+                $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+            else{
+                $afdeling = $_GET['afdeling'];
+
+                require_once("backend/conn.php");
+                $query = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY deadline";
+                $statement = $conn->prepare($query);
+                $statement->execute([ ":afdeling" => $afdeling]);
+
+                $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+            }
+        ?>
+        </div>
+        
         <!-- Table for displaying tasks -->
         <table>
             <tr>
@@ -102,6 +104,10 @@
                 </tr>
             <?php endforeach ?>
         </table>
+
+        <footer>
+            <?php require_once('footer.php') ?>
+        </footer>
     </body>
 </html>
 

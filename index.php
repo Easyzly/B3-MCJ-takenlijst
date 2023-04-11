@@ -23,9 +23,7 @@
             <header>
                 <?php require_once("header.php"); ?>
             </header>
-            <div class="logoCont">
-                <img class="imageButtons" src="img/logo-big-v3.png" alt="devLandLogo">
-            </div>
+            <img class="logo" src="img/logo-big-v3.png" alt="devLandLogo">
         </div>
 
     </div>
@@ -47,8 +45,6 @@
         <h2>Over ons</h2>
     </div>
     <div class="announcements-wrapper">
-
-
         <div class="announcements">
             <div class="announcementsPic">
                 <img src="img/teamPic.jpg" alt="teamPic">
@@ -71,7 +67,7 @@
     </div>
 
     <footer>
-        <?php require_once("require_files/footer.php") ?>
+        <?php require_once("footer.php") ?>
     </footer>
 </body>
 </html>

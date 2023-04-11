@@ -26,7 +26,14 @@
 </head>
 <body>
     <!-- Header -->
-    <?php require_once("../header.php"); ?>
+    <header>
+        <?php require_once("../header.php"); ?>
+    </header>
+    <div class="subHeader">
+        <a href="create.php">Aanmaken</a>
+        <a href="done.php">Klaar</a>
+        <a href="afdeling.php">Afdeling</a>
+    </div>
 
     <!-- create form -->
     <form action="../backend/taskController.php" method="post">
