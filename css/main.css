@@ -337,6 +337,10 @@ header{
   text-shadow: 3px 3px 0 #FCFCFC, -1px -1px 0 #FCFCFC, 1px -1px 0 #FCFCFC, -1px 1px 0 #FCFCFC, 1px 1px 0 #FCFCFC;
 }
 
+.imageButtons{
+  display: flex;
+}
+
 .imageButton{
   width: 200px;
   height: 200px;
@@ -344,4 +348,8 @@ header{
   background-size: cover;
   background-position: center;
   border-radius: 10px;
+}
+
+.logoCont{
+  text-align: center;
 }
