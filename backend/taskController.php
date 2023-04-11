@@ -8,6 +8,7 @@
         $discription = $_POST['discription'];
         $department = $_POST['department'];
         $deadline = $_POST['deadline'];
+        $user = $_POST['user'];
 
         // Check for empty inputs
         if(empty($titel)){
@@ -32,13 +33,14 @@
 
 
         require_once("conn.php");
-        $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline) VALUES (:titel, :beschrijving, :afdeling,:deadline)";
+        $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline,user) VALUES (:titel, :beschrijving, :afdeling,:deadline,:user)";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":titel" => $titel,
             ":beschrijving" => $discription,
             ":afdeling" => $department,
-            ":deadline" => $deadline
+            ":deadline" => $deadline,
+            ":user" => $user
         ]);
 
         header("Location: ../task/index.php");

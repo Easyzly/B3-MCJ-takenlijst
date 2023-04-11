@@ -6,6 +6,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <?php 
+        session_start();
+        if(isset($_SESSION['id'])){
+            $idChecker = $_SESSION['id'];
+
+            require_once("../backend/conn.php");
+            $query = "SELECT * FROM users WHERE id=:id";
+            $statement = $conn->prepare($query);
+            $statement->execute([ ":id" => $idChecker]);
+    
+            $userAccount = $statement->fetch(PDO::FETCH_ASSOC);
+
+        }
+        else{
+            header("Location: ../accountSignin&Signup.php?msg=U bent nog niet ingelogd");
+        }
+    ?>
     </head>
     
     <body>
@@ -20,8 +37,7 @@
             <a href="afdeling.php?afdeling=Groen">Groen</a>
         </div>
 
-        <?php
-            
+        <?php      
             if($_GET['afdeling'] == null or !isset($_GET['afdeling'])){
                 header("Location: afdeling.php?afdeling=Horeca");
             }
@@ -46,6 +62,7 @@
                 <th>Afdeling</th>
                 <th>Status</th>
                 <th>deadline</th>
+                <th>Gebruiker</th>
                 <th>Edit</th>
             </tr>
             <?php foreach($tasks as $task): ?>
@@ -54,6 +71,7 @@
                     <td><?php echo($task['afdeling']) ?></td>
                     <td><?php echo($task['status']) ?></td>
                     <td><?php echo($task['deadline']) ?> </td>
+                    <td><?php echo($task['user'])?></td>
                     <td><a href="edit.php?id=<?php echo $task['id'] ?>">Edit</a></td>
                 </tr>
             <?php endforeach ?>
