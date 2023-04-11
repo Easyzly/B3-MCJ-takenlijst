@@ -21,9 +21,7 @@
     <main>
         <div class="background">
             <header>
-                <a href="index.html" class="heartbeatLogo">Developerland</a>
                 <?php require_once("header.php"); ?>
-                <img class="accountLogo" src="img/accountlogo.png" width="50" alt="accountLogo">
             </header>
             <div class="logoCont">
                 <img class="imageButtons" src="img/logo-big-v3.png" alt="devLandLogo">

@@ -1,8 +1,9 @@
 <div class="headerDiv">
-    <a href="../index.html" class="HeartbeatLogo">Developerland</a>
     <?php 
         $base_url = 'http://localhost/B3-MCJ-takenlijst';
     ?>
+
+    <a class="HeartbeatLogo" href="<?php echo $base_url ?>/index.php">Developerland</a>
 
     <nav>
         <a href="<?php echo $base_url ?>/index.php">Home</a>
