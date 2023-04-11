@@ -2,7 +2,7 @@
     session_start();
     
     if(!isset($_POST['action'])){
-      header("Location: ../accountSignin&Signup.php");
+        header("Location: ../accountSignin&Signup.php");
     }
     else{
         $action = $_POST['action'];
@@ -44,15 +44,28 @@
         if(isset($_POST['name'])){ $name = $_POST['name']; } else{ header("Location: ../accountSignin&Signup.php?msg=no name assigned"); }
         if(isset($_POST['password'])){ $password = $_POST['password']; } else{ header("Location: ../accountSignin&Signup.php?msg=no password assigned"); }
 
+        $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
+
         require_once("conn.php");
-        $query = "INSERT INTO users(naam,password,username) VALUES(:name,:password,:username)";
+
+        // Check if username already exists
+        $query = "SELECT COUNT(*) FROM users WHERE username = :username";
+        $statement = $conn->prepare($query);
+        $statement->execute([":username" => $username]);
+        if ($statement->fetchColumn() > 0) {
+            header("Location: ../accountSignin&Signup.php?status=username already exists");
+            exit();
+        }
+        
+        // Insert new account
+        $query = "INSERT INTO users(naam,password,username) VALUES(:naam,:password,:username)";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":naam" => $name,
-            ":password" => $password,
+            ":password" => $hashedpassword,
             ":username" => $username
         ]);
-
+        
         header("Location: ../userPage.php");
     }
     

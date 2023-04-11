@@ -37,9 +37,11 @@
 
 <!-- Main forms -->
 
+<?php if($status == "username already exists"){ echo($status);} ?>
+
 <body>
     <main>
-    <?php if($status == "Signin"): ?>
+    <?php if($status == "Signin" or $status == "username already exists"): ?>
         <form action="backend/accountController.php" method="post">
             <input type="hidden" name="action" value="Signin">
             <div class="form-group">
@@ -56,11 +58,11 @@
     <?php endif ?>
 
     <?php if($status == "Signup"): ?>
-        <form action="backend/accountController.php" method="post">
+        <form action="backend\accountController.php" method="post">
             <input type="hidden" name="action" value="Signup">
             <div class="form-group">
                 <label for="name">naam: </label>
-                <input type="text" name="naam" id="naam">
+                <input type="text" name="name" id="name">
             </div>
             <div class="form-group">
                 <label for="username">username: </label>
