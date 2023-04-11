@@ -46,6 +46,7 @@
                 <th>deadline</th>
                 <th>Gebruiker</th>
                 <th>Edit</th>
+                <th>Done</th>
             </tr>
             <?php foreach($tasks as $task): ?>
                 <tr>
@@ -55,6 +56,7 @@
                     <td><?php echo($task['deadline']) ?> </td>
                     <td><?php echo($task['user'])?></td>
                     <td><a href="edit.php?id=<?php echo $task['id'] ?>">Edit</a></td>
+                    <td><a href="../backend/doneController.php?id=<?php echo $task['id'] ?>">Done</a></td>
                 </tr>
             <?php endforeach ?>
         </table>
