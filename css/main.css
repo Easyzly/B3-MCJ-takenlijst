@@ -272,6 +272,11 @@
   background-image: url('../img/park01.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
+}
+
+.background-gradient{
+  background-color: rgba(34, 34, 34, 0.5);
 }
 
 header{

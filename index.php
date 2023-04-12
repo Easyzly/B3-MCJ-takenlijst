@@ -20,10 +20,12 @@
 <body>
     <main>
         <div class="background">
-            <header>
-                <?php require_once("header.php"); ?>
-            </header>
-            <img class="logo" src="img/logo-big-v3.png" alt="devLandLogo">
+            <div class="background-gradient">
+                <header>
+                    <?php require_once("header.php"); ?>
+                </header>
+                <img class="logo" src="img/logo-big-v3.png" alt="devLandLogo">
+            </div>
         </div>
 
     </div>
