@@ -69,5 +69,3 @@
         </table>
     </body>
 </html>
-
-<!-- Comment voor commit -->
