@@ -172,10 +172,14 @@
    */
   
   form{
-    background-color: gray;
+    background-color: transparent;
     border: green;
     padding: 50px;
-  } 
+  }
+
+  label{
+    color: white;
+  }
   
   ::-moz-selection {
     background: #b3d4fc;
@@ -332,4 +336,14 @@ header{
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+.form-group{
+  background-color: red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-container{
+  width: 5px;
 }
