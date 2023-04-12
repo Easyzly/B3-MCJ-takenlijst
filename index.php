@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="nl">
 <?php session_start(); ?>
+<div id="headerLocation"></div>
 <head>
     <title></title>
     <?php require_once 'head.php'; ?>
