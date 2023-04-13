@@ -52,10 +52,10 @@
         $id = $_POST['id'];
         $department = $_POST['department'];
         $deadline = $_POST['deadline'];
-
+        $user = $_POST['user'];
 
         require_once("conn.php");
-        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving, deadline = :deadline WHERE id = :id";
+        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving, deadline = :deadline, user = :user WHERE id = :id";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":titel" => $title,
@@ -63,7 +63,8 @@
             ":status" => $status,
             ":id" => $id,
             ":afdeling" => $department,
-            ":deadline" => $deadline
+            ":deadline" => $deadline,
+            ":user" => $user
         ]);
         header("Location: ../task/index.php");
 
