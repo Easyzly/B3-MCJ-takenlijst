@@ -365,23 +365,19 @@ input[type="submit"] {
 table{
   background-color: rgb(22, 28, 27, 0.9);
   border-radius: 10px;
-  margin: 30px auto;
+  margin: 0px auto;
   padding: 20px;
   color: white;
 }
-
 td{
   padding: 30px;
 }
-
 td a{
   color: skyblue;
 }
-
 tr:first-child{
   background-color: rgb(42, 48, 47);
 }
-
 tr:nth-child(odd){
   background-color: rgb(32, 38, 37);
 }
