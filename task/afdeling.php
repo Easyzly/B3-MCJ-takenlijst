@@ -94,11 +94,11 @@
                     </tr>
                 <?php endforeach ?>
             </table>
+            <footer>
+                <?php require_once('../footer.php') ?>
+            </footer>
         </div>
     </div>
-    <footer>
-        <?php require_once('../footer.php') ?>
-    </footer>
 </body>
 
 </html>
