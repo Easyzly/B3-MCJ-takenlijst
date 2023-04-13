@@ -98,8 +98,6 @@ if ($_GET['status'] == null or !isset($_GET['status'])) {
                 <?php endif ?>
             </div>
         </div>
-
-        <!-- fix background img -->
     </main>
 
     <footer>
