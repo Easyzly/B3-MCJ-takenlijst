@@ -53,8 +53,8 @@ if ($_GET['status'] == null or !isset($_GET['status'])) {
 
                 <!-- Login form -->
                 <?php if ($status == "Signin" or $status == "username already exists"): ?>
-                    <div class="form-container">    
-                        <form action="backend/accountController.php" method="post">
+                    <form action="backend/accountController.php" method="post">
+                        <div class="form-container">
                             <input type="hidden" name="action" value="Signin">
                             <div class="form-group">
                                 <label for="username">Gebruikersnaam: </label>
@@ -64,32 +64,37 @@ if ($_GET['status'] == null or !isset($_GET['status'])) {
                                 <label for="password">Wachtwoord: </label>
                                 <input type="password" name="password" id="password">
                             </div>
-                            <input type="submit" value="login">
-                            <a href="accountSignin&Signup.php?status=Signup">I dont have an account yet</a>
-                        </form>
-                    </div>
+                            <div class="form-group">
+                                <input type="submit" value="Log in">
+                                <a href="accountSignin&Signup.php?status=Signup">I don't have an account</a>
+                            </div>
+                        </div>
+                    </form>
                 <?php endif ?>
 
                 <!-- Signup form -->
                 <?php if ($status == "Signup"): ?>
                     <form action="backend\accountController.php" method="post">
-                        <input type="hidden" name="action" value="Signup">
-                        <div class="form-group">
-                            <label for="name">Naam: </label>
-                            <input type="text" name="name" id="name">
+                        <div class="form-container">
+                            <input type="hidden" name="action" value="Signup">
+                            <div class="form-group">
+                                <label for="name">Naam: </label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Gebruikersnaam: </label>
+                                <input type="text" name="username" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Wachtwoord: </label>
+                                <input type="password" name="password" id="password">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Sign up">
+                                <a href="accountSignin&Signup.php?status=Signin">I already have an account</a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="username">Gebruikersnaam: </label>
-                            <input type="text" name="username" id="username">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Wachtwoord: </label>
-                            <input type="password" name="password" id="password">
-                        </div>
-                        <input type="submit" value="signup">
                     </form>
-
-                    <a href="accountSignin&Signup.php?status=Signin">I already have an account</a>
                 <?php endif ?>
             </div>
         </div>

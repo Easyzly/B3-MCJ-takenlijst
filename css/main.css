@@ -316,9 +316,6 @@ header{
   padding: 25px;
 }
 
-
-
-
 .imageButtons{
   display: flex;
 }
@@ -338,12 +335,53 @@ header{
   display: block;
 }
 
-.form-group{
-  background-color: red;
-  display: flex;
-  justify-content: space-between;
+.form-container{
+  background-color: rgb(22, 28, 27, 0.9);
+  border-radius: 10px;
+  width: 50%;
 }
 
-.form-container{
-  width: 5px;
+.form-group{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.form-group a{
+  color: white;
+}
+
+input[type="text"], input[type="password"] {
+  width: 500px;
+}
+
+input[type="submit"] {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table{
+  background-color: rgb(22, 28, 27, 0.9);
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 20px;
+  color: white;
+}
+
+td{
+  padding: 30px;
+}
+
+td a{
+  color: skyblue;
+}
+
+tr:first-child{
+  background-color: rgb(42, 48, 47);
+}
+
+tr:nth-child(odd){
+  background-color: rgb(32, 38, 37);
 }
