@@ -71,6 +71,10 @@
             <label for="deadline">deadline: </label>
             <input type="date" name="deadline" id="deadline" value="<?php echo($task['deadline']); ?>">
         </div>        
+        <div class="form-group">
+            <label for="user">User: </label>
+            <input type="text" name="user" id="user" value="<?php echo($task['user']); ?>">
+        </div>        
         <input type="submit" value="edit">
     </form>
 
