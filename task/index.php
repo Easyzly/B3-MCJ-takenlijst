@@ -52,7 +52,7 @@ if (isset($_SESSION['id'])) {
                     <th>Titel</th>
                     <th>Afdeling</th>
                     <th>Status</th>
-                    <th>deadline</th>
+                    <th>Deadline</th>
                     <th>Gebruiker</th>
                     <th>Edit</th>
                     <th>Done</th>

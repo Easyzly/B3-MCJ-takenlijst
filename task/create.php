@@ -68,7 +68,7 @@
                         <input type="date" name="deadline" id="deadline">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="submit">
+                        <input type="submit" value="Aanmaken">
                     </div>
                 </div>
             </form>

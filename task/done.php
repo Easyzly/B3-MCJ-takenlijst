@@ -48,7 +48,7 @@
                 <tr>
                     <th>Titel</th>
                     <th>Afdeling</th>
-                    <th>deadline</th>
+                    <th>Deadline</th>
                     <th>Gebruiker</th>
                     <th>Edit</th>
                 </tr>

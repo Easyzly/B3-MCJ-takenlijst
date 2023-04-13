@@ -41,11 +41,11 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                     <input type="hidden" name="action" value="edit">
                     <input type="hidden" name="id" value=<?php echo ($id) ?>>
                     <div class="form-group">
-                        <label for="title">titel: </label>
+                        <label for="title">Titel: </label>
                         <input type="text" name="titel" id="titel" value="<?php echo ($task['titel']); ?>">
                     </div>
                     <div class="form-group">
-                        <label for="department">afdeling: </label>
+                        <label for="department">Afdeling: </label>
                         <select name="department" id="department">
                             <option value="<?php echo ($task['afdeling']); ?>"><?php echo ($task['afdeling']); ?>
                             </option>
@@ -63,7 +63,7 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                             value="<?php echo ($task['beschrijving']) ?>">
                     </div>
                     <div class="form-group">
-                        <label for="status">status: </label>
+                        <label for="status">Status: </label>
                         <select name="status" id="status">
                             <option value="<?php echo ($task['status']); ?>"><?php echo ($task['status']); ?></option>
                             <option value="done">done</option>
@@ -72,7 +72,7 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="deadline">deadline: </label>
+                        <label for="deadline">Deadline: </label>
                         <input type="date" name="deadline" id="deadline" value="<?php echo ($task['deadline']); ?>">
                     </div>
                     <div class="form-group">
@@ -80,7 +80,7 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                         <input type="text" name="user" id="user" value="<?php echo ($task['user']); ?>">
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="edit">
+                        <input type="submit" value="Wijzigen">
                     </div>
                 </div>
             </form>
