@@ -381,3 +381,23 @@ tr:first-child{
 tr:nth-child(odd){
   background-color: rgb(32, 38, 37);
 }
+
+.userpage-container{
+  width: 50%;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: rgb(22, 28, 27, 0.9);
+  border-radius: 10px;
+}
+.userpage-container p{
+  color: white;
+  text-align: center;
+}
+.userpage-container a{
+  color: skyblue;
+  text-decoration: none;
+}
+.department-buttons{
+  display: flex;
+  justify-content: space-between;
+}
