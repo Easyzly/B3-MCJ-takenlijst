@@ -25,8 +25,6 @@
     ?>
 </head>
 
-
-<?php echo ($userAccount['naam']) ?>
 <body>
     <!-- Header -->
     <div class="background">
