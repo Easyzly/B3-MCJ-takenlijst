@@ -8,7 +8,7 @@
         $discription = $_POST['discription'];
         $department = $_POST['department'];
         $deadline = $_POST['deadline'];
-        $user = $_POST['user'];
+        $username = $_POST['username'];
 
         // Check for empty inputs
         if(empty($titel)){
@@ -35,7 +35,7 @@
         $discription = strip_tags($discription);
         $department = strip_tags($department);
         $deadline = strip_tags($deadline);
-        $user = strip_tags($user);
+        $username = strip_tags($username);
 
         require_once("conn.php");
         $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline,user) VALUES (:titel, :beschrijving, :afdeling,:deadline,:user)";
@@ -45,7 +45,7 @@
             ":beschrijving" => $discription,
             ":afdeling" => $department,
             ":deadline" => $deadline,
-            ":user" => $user
+            ":user" => $username
         ]);
 
         header("Location: ../task/index.php");
