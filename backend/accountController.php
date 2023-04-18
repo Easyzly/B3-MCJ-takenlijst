@@ -12,6 +12,9 @@
         if(isset($_POST['username'])){ $username = $_POST['username']; } else{ header("Location: ../accountSignin&Signup.php?msg=no username assigned"); }
         if(isset($_POST['password'])){ $password = $_POST['password']; } else{ header("Location: ../accountSignin&Signup.php?msg=no password assigned"); }
 
+        $password = strip_tags($password);
+        $username = strip_tags($username);
+
         require_once("conn.php");
         $query = "SELECT * FROM users WHERE username=:username";
         $statement = $conn->prepare($query);
@@ -43,6 +46,10 @@
         if(isset($_POST['username'])){ $username = $_POST['username']; } else{ header("Location: ../accountSignin&Signup.php?msg=no username assigned"); }
         if(isset($_POST['name'])){ $name = $_POST['name']; } else{ header("Location: ../accountSignin&Signup.php?msg=no name assigned"); }
         if(isset($_POST['password'])){ $password = $_POST['password']; } else{ header("Location: ../accountSignin&Signup.php?msg=no password assigned"); }
+
+        $username = strip_tags($username);
+        $name = strip_tags($name);
+        $password = strip_tags($password);
 
         $hashedpassword = password_hash($password, PASSWORD_DEFAULT);
 

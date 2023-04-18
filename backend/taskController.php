@@ -31,6 +31,11 @@
             die();
         }
 
+        $titel = strip_tags($titel);
+        $discription = strip_tags($discription);
+        $department = strip_tags($department);
+        $deadline = strip_tags($deadline);
+        $user = strip_tags($user);
 
         require_once("conn.php");
         $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline,user) VALUES (:titel, :beschrijving, :afdeling,:deadline,:user)";
@@ -53,6 +58,14 @@
         $department = $_POST['department'];
         $deadline = $_POST['deadline'];
         $user = $_POST['user'];
+
+        $titel = strip_tags($titel);
+        $discription = strip_tags($discription);
+        $status = strip_tags($status);
+        $id = strip_tags($id);
+        $department = strip_tags($department);
+        $deadline = strip_tags($deadline);
+        $user = strip_tags($user);
 
         require_once("conn.php");
         $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving, deadline = :deadline, user = :user WHERE id = :id";

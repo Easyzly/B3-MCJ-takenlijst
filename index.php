@@ -30,19 +30,6 @@
         </div>
 
     </div>
-    <div class="tripleImg">
-        <div class="infoLink">
-            <a href="info.php"><img src="img/infoLogo.jpg" alt="info" width="300" height="300"></a>
-        </div>
-        <div class="DevlandLink">
-            <a href="#headerLocation"><img src="img/logo-big-v3.png" alt="bigLogo" width="300"></a>
-        </div>
-        <div class="TakenLink">
-            <a href="taskPage.php"><img src="img/taskImg.jpg" alt="taskImg" width="300"></a>
-        </div>
-    </div>
-
-    <hr>
 
     <div class="h2Title">
         <h2>Over ons</h2>
@@ -60,14 +47,7 @@
             </div>
         </div>
     </div>
-    <div class="task-wrapper">
-        <div class="taskText">
-            
-        </div>
-        <div class="taskPic">
-
-        </div>
-    </div>
+    <br>
 
     <footer>
         <?php require_once("footer.php") ?>
