@@ -54,6 +54,7 @@ if (isset($_SESSION['id'])) {
                     <th>Status</th>
                     <th>Deadline</th>
                     <th>Gebruiker</th>
+                    <th>Categorie</th>
                     <th>Edit</th>
                     <th>Done</th>
                 </tr>
@@ -73,6 +74,9 @@ if (isset($_SESSION['id'])) {
                         </td>
                         <td>
                             <?php echo ($task['user']) ?>
+                        </td>
+                        <td>
+                            <?php echo ($task['kleur']) ?>
                         </td>
                         <td><a href="edit.php?id=<?php echo $task['id'] ?>">Edit</a></td>
                         <td><a href="../backend/doneController.php?id=<?php echo $task['id'] ?>">Done</a></td>

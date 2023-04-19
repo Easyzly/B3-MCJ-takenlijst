@@ -9,6 +9,7 @@
         $department = $_POST['department'];
         $deadline = $_POST['deadline'];
         $username = $_POST['username'];
+        $color = $_POST['color'];
 
         // Check for empty inputs
         if(empty($titel)){
@@ -31,21 +32,27 @@
             die();
         }
 
+        if(empty($color)){
+            header("Location: ../task/create.php?msg=Geen kleur gekozen");
+        }
+
         $titel = strip_tags($titel);
         $discription = strip_tags($discription);
         $department = strip_tags($department);
         $deadline = strip_tags($deadline);
         $username = strip_tags($username);
+        $color = strip_tags($color);
 
         require_once("conn.php");
-        $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline,user) VALUES (:titel, :beschrijving, :afdeling,:deadline,:user)";
+        $query = "INSERT INTO taken(titel, beschrijving, afdeling,deadline,user,kleur) VALUES (:titel, :beschrijving, :afdeling,:deadline,:user,:color)";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":titel" => $titel,
             ":beschrijving" => $discription,
             ":afdeling" => $department,
             ":deadline" => $deadline,
-            ":user" => $username
+            ":user" => $username,
+            ":color" => $color
         ]);
 
         header("Location: ../task/index.php");
@@ -58,6 +65,7 @@
         $department = $_POST['department'];
         $deadline = $_POST['deadline'];
         $user = $_POST['user'];
+        $color = $_POST['color'];
 
         $titel = strip_tags($titel);
         $discription = strip_tags($discription);
@@ -66,9 +74,10 @@
         $department = strip_tags($department);
         $deadline = strip_tags($deadline);
         $user = strip_tags($user);
+        $color = strip_tags($color);
 
         require_once("conn.php");
-        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving, deadline = :deadline, user = :user WHERE id = :id";
+        $query = "UPDATE taken SET titel = :titel, afdeling = :afdeling, status = :status, beschrijving = :beschrijving, deadline = :deadline, user = :user, kleur = :color WHERE id = :id";
         $statement = $conn->prepare($query);
         $statement->execute([
             ":titel" => $title,
@@ -77,7 +86,8 @@
             ":id" => $id,
             ":afdeling" => $department,
             ":deadline" => $deadline,
-            ":user" => $user
+            ":user" => $user,
+            ":color" => $color
         ]);
         header("Location: ../task/index.php");
 
