@@ -64,6 +64,14 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="color">Kleur: </label>
+                        <select name="color" id="color">
+                            <option value="Groen">Groen</option>
+                            <option value="Rood">Rood</option>
+                            <option value="Blauw">Blauw</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="deadline">Deadline: </label>
                         <input type="date" name="deadline" id="deadline">
                     </div>

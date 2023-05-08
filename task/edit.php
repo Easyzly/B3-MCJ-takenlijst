@@ -80,6 +80,15 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                         <input type="text" name="user" id="user" value="<?php echo ($task['user']); ?>">
                     </div>
                     <div class="form-group">
+                        <label for="color">Kleur: </label>
+                        <select name="color" id="color" >
+                            <option value="Groen"<?php if($task['kleur'] == "Groen") echo ('selected="selected"') ?>>Groen</option>
+                            <option value="Rood" <?php if($task['kleur'] == "Rood") echo ('selected="selected"') ?>>Rood</option>
+                            <option value="Blauw" <?php if($task['kleur'] == "Blauw") echo ('selected="selected"') ?>>Blauw</option>
+                        </select>
+                    </div>
+                    <?php print_r($task) ?>
+                    <div class="form-group">
                         <input type="submit" value="Wijzigen">
                     </div>
                 </div>
