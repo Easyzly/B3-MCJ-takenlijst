@@ -433,7 +433,7 @@ tr:nth-child(odd) {
   background-image: url(../img/Team.jpg);
 }
 
-.imgtype h1 {
+.imgtype h2 {
   width: 100%;
   aspect-ratio: 1.3;
 }

@@ -30,20 +30,23 @@
                 <img class="logo" src="img/logo-big-v3.png" alt="devLandLogo">
                 <!-- Widget group -->
                 <div class="WidgetBlock">
-                    <h1>Aankondigingen</h1>
+                    <h2>Aankondigingen</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facere impedit, provident
                         architecto aperiam velit harum repellat accusamus, cupiditate eum quasi explicabo voluptate
                         mollitia, minima sunt numquam! Aliquam, a magnam.</p>
                 </div>
+                <br>
                 <div class="WidgetBlock">
-                    <h1>Over ons</h1>
+                    <h2>Over ons</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facere impedit, provident
                         architecto aperiam velit harum repellat accusamus, cupiditate eum quasi explicabo voluptate
                         mollitia, minima sunt numquam! Aliquam, a magnam.</p>
                 </div>
+                <br>
                 <div class="WidgetBlock imgtype">
-                    <h1>Het Team</h1>
+                    <h2>Het Team</h2>
                 </div>
+                <br>
             </div>
         </div>
     </main>
