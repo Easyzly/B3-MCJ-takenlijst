@@ -83,6 +83,7 @@ if (isset($_SESSION['id'])) {
                     </tr>
                 <?php endforeach ?>
             </table>
+
             <footer>
                 <?php require_once('../footer.php'); ?>
             </footer>

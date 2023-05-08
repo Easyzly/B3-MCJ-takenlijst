@@ -32,6 +32,14 @@ if (isset($_SESSION['id'])) {
                 <?php require_once('header.php') ?>
             </header>
 
+            <!-- User logout button -->
+            <div class="logout-container">
+                <form action="backend/accountController.php" method="post">
+                    <input type="hidden" name="action" value="Logout">
+                    <input type="submit" value="logout">
+                </form>
+            </div>
+
             <div class="container">
                 <p>Selecteer een afdeling:</p><br>
 
@@ -49,35 +57,32 @@ if (isset($_SESSION['id'])) {
 
                 <!-- Afdeling checker -->
                 <?php
-                    if ($_GET['afdeling'] == null or !isset($_GET['afdeling'])) {
-                        header("Location: userPage.php?afdeling=Horeca");
-                    }
-                    elseif ($_GET['afdeling'] == "noFilter") {
-                        require_once("backend/conn.php");
-                        $query = "SELECT * FROM taken ORDER BY deadline";
-                        $statement = $conn->prepare($query);
-                        $statement->execute();
+                if ($_GET['afdeling'] == null or !isset($_GET['afdeling'])) {
+                    header("Location: userPage.php?afdeling=Horeca");
+                } elseif ($_GET['afdeling'] == "noFilter") {
+                    require_once("backend/conn.php");
+                    $query = "SELECT * FROM taken ORDER BY deadline";
+                    $statement = $conn->prepare($query);
+                    $statement->execute();
 
-                        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                    } 
-                    elseif ($_GET['afdeling'] == "User") {
-                        require_once("backend/conn.php");
-                        $query = "SELECT * FROM taken WHERE user = :user ORDER BY deadline";
-                        $statement = $conn->prepare($query);
-                        $statement->execute([":user" => $userAccount['naam']]);
+                    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+                } elseif ($_GET['afdeling'] == "User") {
+                    require_once("backend/conn.php");
+                    $query = "SELECT * FROM taken WHERE user = :user ORDER BY deadline";
+                    $statement = $conn->prepare($query);
+                    $statement->execute([":user" => $userAccount['naam']]);
 
-                        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                    } 
-                    else {
-                        $afdeling = $_GET['afdeling'];
+                    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+                } else {
+                    $afdeling = $_GET['afdeling'];
 
-                        require_once("backend/conn.php");
-                        $query = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY deadline";
-                        $statement = $conn->prepare($query);
-                        $statement->execute([":afdeling" => $afdeling]);
+                    require_once("backend/conn.php");
+                    $query = "SELECT * FROM taken WHERE afdeling = :afdeling ORDER BY deadline";
+                    $statement = $conn->prepare($query);
+                    $statement->execute([":afdeling" => $afdeling]);
 
-                        $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
-                    }
+                    $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
+                }
                 ?>
 
                 <!-- Table for displaying tasks -->
@@ -115,12 +120,6 @@ if (isset($_SESSION['id'])) {
                 <?php else: ?>
                     <p>Je hebt geen taken voor deze afdeling.</p>
                 <?php endif ?>
-
-                <!-- User settings and details -->
-                <form action="backend/accountController.php" method="post">
-                    <input type="hidden" name="action" value="Logout">
-                    <input type="submit" value="logout">
-                </form>
             </div>
 
             <footer>
