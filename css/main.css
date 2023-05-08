@@ -281,6 +281,7 @@
 
 .background-gradient{
   background-color: rgba(34, 34, 34, 0.5);
+  padding-bottom: 20px;
 }
 
 header{
@@ -336,7 +337,7 @@ header{
 }
 
 .form-container{
-  background-color: rgb(22, 28, 27, 0.9);
+  background-color: rgba(22, 28, 27, 0.9);
   border-radius: 10px;
   width: 50%;
 }
@@ -363,7 +364,7 @@ input[type="submit"] {
 }
 
 table{
-  background-color: rgb(22, 28, 27, 0.9);
+  background-color: rgba(22, 28, 27, 0.9);
   border-radius: 10px;
   margin: 30px auto;
   padding: 20px;
@@ -400,4 +401,30 @@ tr:nth-child(odd){
 .department-buttons{
   display: flex;
   justify-content: space-between;
+}
+
+/* Index Page */
+.WidgetBlock{
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  margin: auto;
+  width: 40%;
+  background-color: rgba(22, 28, 27, 0.9);
+  transition: 1s;
+}
+
+.WidgetBlock:hover{
+  transform: scale(1.02);
+}
+
+.imgtype{
+  background-position: center;
+  background-size: cover;
+  background-image: url(../img/Team.jpg);
+}
+
+.imgtype h1{
+  width: 100%;
+  aspect-ratio: 1.3;
 }
