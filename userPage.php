@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
                 <?php require_once('header.php') ?>
             </header>
 
-            <div class="userpage-container">
+            <div class="container">
                 <p>Selecteer een afdeling:</p><br>
 
                 <!-- Afdeling selector  -->
