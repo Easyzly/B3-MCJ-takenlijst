@@ -34,9 +34,29 @@ if (isset($_SESSION['id'])) {
 
             <!-- User logout button -->
             <div class="logout-container">
+                <p><?php
+                    $currentHour = date('H');
+                    if ($currentHour >= 6 && $currentHour < 12) {
+                        echo "Goedemorgen";
+                    }
+                    else if ($currentHour >= 12 && $currentHour < 18) {
+                        echo "Goedemiddag";
+                    }
+                    else if ($currentHour >= 18 && $currentHour <= 23) {
+                        echo "Goedenavond";
+                    }
+                    else if ($currentHour < 6) {
+                        echo "Bedtijd meneertje";
+                    }
+                    else {
+                        echo "Goedendag";
+                    }
+                    echo ", " . $userAccount['naam'] . "!";
+                ?></p><br>
+
                 <form action="backend/accountController.php" method="post">
                     <input type="hidden" name="action" value="Logout">
-                    <input type="submit" value="logout">
+                    <input type="submit" value="Uitloggen">
                 </form>
             </div>
 
@@ -120,12 +140,6 @@ if (isset($_SESSION['id'])) {
                 <?php else: ?>
                     <p>Je hebt geen taken voor deze afdeling.</p>
                 <?php endif ?>
-
-                <!-- User settings and details -->
-                <form action="backend/accountController.php" method="post">
-                    <input type="hidden" name="action" value="Logout">
-                    <input class="input" type="submit" value="logout">
-                </form>
             </div>
 
             <footer>

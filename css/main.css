@@ -153,7 +153,6 @@ nav a {
   color: white;
 }
 
-
 @font-face {
   font-family: 'Heartbeat';
   src: url("../fonts/heartbeat.eot") format('eot'),
@@ -172,20 +171,20 @@ nav a {
    *
    * Customize the background color to match your design.
    */
-  
-  form{
-    background-color: transparent;
-    border: green;
-    padding: 50px;
-  }
 
-  button:hover{
-    cursor: pointer;
-  }
+form {
+  background-color: transparent;
+  border: green;
+  padding: 50px;
+}
 
-  .input:hover {
-    cursor: pointer;
-  }
+button:hover {
+  cursor: pointer;
+}
+
+.input:hover {
+  cursor: pointer;
+}
 
 form {
   background-color: transparent;
@@ -455,18 +454,26 @@ tr:nth-child(odd) {
 /* UserPage */
 
 .logout-container {
-  width: 12.5%;
+  width: 25%;
   margin: 30px auto;
   padding: 30px;
   background-color: rgb(22, 28, 27, 0.9);
   border-radius: 10px;
 }
-.logout-container form{
+
+.logout-container form {
   padding: 0;
 }
+
+.logout-container p {
+  color: white;
+  text-align: center;
+}
+
 .logout-container input[type="submit"] {
-  margin: auto;
-  display: flex;
   width: 100%;
   text-align: center;
+  border-radius: 10px;
+  background-color: rgb(75, 75, 75);
+  color: white;
 }
