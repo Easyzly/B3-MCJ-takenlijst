@@ -32,7 +32,15 @@ if (isset($_SESSION['id'])) {
                 <?php require_once('header.php') ?>
             </header>
 
-            <div class="userpage-container">
+            <!-- User logout button -->
+            <div class="logout-container">
+                <form action="backend/accountController.php" method="post">
+                    <input type="hidden" name="action" value="Logout">
+                    <input type="submit" value="logout">
+                </form>
+            </div>
+
+            <div class="container">
                 <p>Selecteer een afdeling:</p><br>
 
                 <!-- Afdeling selector  -->
@@ -60,9 +68,9 @@ if (isset($_SESSION['id'])) {
                     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                 } elseif ($_GET['afdeling'] == "User") {
                     require_once("backend/conn.php");
-                    $query = "SELECT * FROM taken WHERE id = :id ORDER BY deadline";
+                    $query = "SELECT * FROM taken WHERE user = :user ORDER BY deadline";
                     $statement = $conn->prepare($query);
-                    $statement->execute([":id" => $userAccount['id']]);
+                    $statement->execute([":user" => $userAccount['naam']]);
 
                     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                 } else {
