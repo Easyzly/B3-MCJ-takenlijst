@@ -85,6 +85,9 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                             <option value="Groen"<?php if($task['kleur'] == "Groen") echo ('selected="selected"') ?>>Groen</option>
                             <option value="Rood" <?php if($task['kleur'] == "Rood") echo ('selected="selected"') ?>>Rood</option>
                             <option value="Blauw" <?php if($task['kleur'] == "Blauw") echo ('selected="selected"') ?>>Blauw</option>
+                            <option value="Paars"<?php if($task['kleur'] == "Paars") echo ('selected="selected"') ?>>Paars</option>
+                            <option value="Roze"<?php if($task['kleur'] == "Roze") echo ('selected="selected"') ?>>Roze</option>
+                            <option value="Oranje"<?php if($task['kleur'] == "Oranje") echo ('selected="selected"') ?>>Oranje</option>
                         </select>
                     </div>
                     <?php print_r($task) ?>

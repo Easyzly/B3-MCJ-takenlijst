@@ -68,7 +68,10 @@
                         <select name="color" id="color">
                             <option value="Groen">Groen</option>
                             <option value="Rood">Rood</option>
+                            <option value="Paars">Paars</option>
+                            <option value="Roze">Roze</option>
                             <option value="Blauw">Blauw</option>
+                            <option value="Oranje">Oranje</option>
                         </select>
                     </div>
                     <div class="form-group">
