@@ -31,16 +31,21 @@
                 <!-- Widget group -->
                 <div class="WidgetBlock">
                     <h2>Aankondigingen</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facere impedit, provident
-                        architecto aperiam velit harum repellat accusamus, cupiditate eum quasi explicabo voluptate
-                        mollitia, minima sunt numquam! Aliquam, a magnam.</p>
+                    <p>"Maak je leven gemakkelijker met onze nieuwe takenlijst website! Of je nu op zoek bent naar een
+                        betere manier om je dagelijkse taken te beheren of om je werk beter te organiseren, onze
+                        takenlijst website biedt de oplossing die je nodig hebt.</p>
                 </div>
                 <br>
                 <div class="WidgetBlock">
                     <h2>Over ons</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem facere impedit, provident
-                        architecto aperiam velit harum repellat accusamus, cupiditate eum quasi explicabo voluptate
-                        mollitia, minima sunt numquam! Aliquam, a magnam.</p>
+                    <p>Developerland is opgericht door een team van gepassioneerde technologieliefhebbers met als doel
+                        een uniek pretpark te creëren dat gericht is op het verkennen en ervaren van de nieuwste
+                        technologische innovaties.</p>
+                    <br>
+                    <p>Onze medewerkers zijn allemaal experts op hun gebied en zijn gepassioneerd over het delen van hun
+                        kennis en enthousiasme met anderen. We bieden educatieve workshops en presentaties aan om
+                        bezoekers te informeren over de nieuwste trends en ontwikkelingen op het gebied van technologie,
+                        zodat ze geïnspireerd kunnen worden om hun eigen creativiteit en innovatie te verkennen.</p>
                 </div>
                 <br>
                 <div class="WidgetBlock imgtype">
