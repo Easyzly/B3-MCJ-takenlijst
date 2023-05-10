@@ -70,7 +70,7 @@ if (isset($_SESSION['id'])) {
                     require_once("backend/conn.php");
                     $query = "SELECT * FROM taken WHERE user = :user ORDER BY deadline";
                     $statement = $conn->prepare($query);
-                    $statement->execute([":user" => $userAccount['naam']]);
+                    $statement->execute([":user" => $userAccount['id']]);
 
                     $tasks = $statement->fetchAll(PDO::FETCH_ASSOC);
                 } else {

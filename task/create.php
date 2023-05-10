@@ -43,7 +43,7 @@
             <form action="../backend/taskController.php" method="post">
                 <div class="form-container">
                     <input type="hidden" name="action" value="create">
-                    <input type="hidden" name="username" value="<?php echo ($userAccount['naam']) ?>">
+                    <input type="hidden" name="username" value="<?php echo ($userAccount['id']) ?>">
                     <div class="form-group">
                         <label for="title">Titel: </label>
                         <input type="text" name="titel" id="titel">
