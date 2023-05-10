@@ -65,7 +65,7 @@ if ($_GET['status'] == null or !isset($_GET['status'])) {
                                 <input type="password" name="password" id="password">
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Log in">
+                                <input class="input" type="submit" value="Log in">
                                 <a href="accountSignin&Signup.php?status=Signup">I don't have an account</a>
                             </div>
                         </div>
@@ -90,7 +90,7 @@ if ($_GET['status'] == null or !isset($_GET['status'])) {
                                 <input type="password" name="password" id="password">
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Sign up">
+                                <input class="input" type="submit" value="Sign up">
                                 <a href="accountSignin&Signup.php?status=Signin">I already have an account</a>
                             </div>
                         </div>

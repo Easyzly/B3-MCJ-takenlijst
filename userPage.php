@@ -116,7 +116,7 @@ if (isset($_SESSION['id'])) {
                 <!-- User settings and details -->
                 <form action="backend/accountController.php" method="post">
                     <input type="hidden" name="action" value="Logout">
-                    <input type="submit" value="logout">
+                    <input class="input" type="submit" value="logout">
                 </form>
             </div>
 
