@@ -44,61 +44,60 @@ if ($_GET['status'] == null or !isset($_GET['status'])) {
 } ?>
 
 <body>
+    <header>
+        <?php require_once("header.php"); ?>
+    </header>
+
     <main>
         <div class="background">
-            <div class="background-gradient">
-                <header>
-                    <?php require_once("header.php"); ?>
-                </header>
-
-                <!-- Login form -->
-                <?php if ($status == "Signin" or $status == "username already exists"): ?>
-                    <form action="backend/accountController.php" method="post">
-                        <div class="form-container">
-                            <input type="hidden" name="action" value="Signin">
-                            <div class="form-group">
-                                <label for="username">Gebruikersnaam: </label>
-                                <input type="text" name="username" id="username" value="<?php echo ($username) ?>">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Wachtwoord: </label>
-                                <input type="password" name="password" id="password">
-                            </div>
-                            <div class="form-group">
-                                <input class="input" type="submit" value="Log in">
-                                <a href="accountSignin&Signup.php?status=Signup">I don't have an account</a>
-                            </div>
+            <!-- Login form -->
+            <?php if ($status == "Signin" or $status == "username already exists"): ?>
+                <form action="backend/accountController.php" method="post">
+                    <div class="form-container">
+                        <input type="hidden" name="action" value="Signin">
+                        <div class="form-group">
+                            <label for="username">Gebruikersnaam: </label>
+                            <input type="text" name="username" id="username" value="<?php echo ($username) ?>">
                         </div>
-                    </form>
-                <?php endif ?>
-
-                <!-- Signup form -->
-                <?php if ($status == "Signup"): ?>
-                    <form action="backend\accountController.php" method="post">
-                        <div class="form-container">
-                            <input type="hidden" name="action" value="Signup">
-                            <div class="form-group">
-                                <label for="name">Naam: </label>
-                                <input type="text" name="name" id="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="username">Gebruikersnaam: </label>
-                                <input type="text" name="username" id="username">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Wachtwoord: </label>
-                                <input type="password" name="password" id="password">
-                            </div>
-                            <div class="form-group">
-                                <input class="input" type="submit" value="Sign up">
-                                <a href="accountSignin&Signup.php?status=Signin">I already have an account</a>
-                            </div>
+                        <div class="form-group">
+                            <label for="password">Wachtwoord: </label>
+                            <input type="password" name="password" id="password">
                         </div>
-                    </form>
-                <?php endif ?>
-            </div>
+                        <div class="form-group">
+                            <input class="input" type="submit" value="Log in">
+                            <a href="accountSignin&Signup.php?status=Signup">I don't have an account</a>
+                        </div>
+                    </div>
+                </form>
+            <?php endif ?>
+
+            <!-- Signup form -->
+            <?php if ($status == "Signup"): ?>
+                <form action="backend\accountController.php" method="post">
+                    <div class="form-container">
+                        <input type="hidden" name="action" value="Signup">
+                        <div class="form-group">
+                            <label for="name">Naam: </label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Gebruikersnaam: </label>
+                            <input type="text" name="username" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Wachtwoord: </label>
+                            <input type="password" name="password" id="password">
+                        </div>
+                        <div class="form-group">
+                            <input class="input" type="submit" value="Sign up">
+                            <a href="accountSignin&Signup.php?status=Signin">I already have an account</a>
+                        </div>
+                    </div>
+                </form>
+            <?php endif ?>
         </div>
     </main>
+
 
     <footer>
         <?php require_once("footer.php"); ?>

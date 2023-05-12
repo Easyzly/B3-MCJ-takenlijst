@@ -26,33 +26,34 @@ if (isset($_SESSION['id'])) {
 ?>
 
 <body>
-    <div class="background">
-        <div class="background-gradient">
-            <header>
-                <?php require_once('header.php') ?>
-            </header>
 
+    <header>
+        <?php require_once('header.php') ?>
+    </header>
+
+
+
+    <main>
+        <div class="background">
             <!-- User logout button -->
             <div class="logout-container">
-                <p><?php
+                <p>
+                    <?php
                     $currentHour = date('H');
                     if ($currentHour >= 6 && $currentHour < 12) {
                         echo "Goedemorgen";
-                    }
-                    else if ($currentHour >= 12 && $currentHour < 18) {
+                    } else if ($currentHour >= 12 && $currentHour < 18) {
                         echo "Goedemiddag";
-                    }
-                    else if ($currentHour >= 18 && $currentHour <= 23) {
+                    } else if ($currentHour >= 18 && $currentHour <= 23) {
                         echo "Goedenavond";
-                    }
-                    else if ($currentHour < 6) {
+                    } else if ($currentHour < 6) {
                         echo "Bedtijd meneertje";
-                    }
-                    else {
+                    } else {
                         echo "Goedendag";
                     }
                     echo ", " . $userAccount['naam'] . "!";
-                ?></p><br>
+                    ?>
+                </p><br>
 
                 <form action="backend/accountController.php" method="post">
                     <input type="hidden" name="action" value="Logout">
@@ -141,12 +142,12 @@ if (isset($_SESSION['id'])) {
                     <p>Je hebt geen taken voor deze afdeling.</p>
                 <?php endif ?>
             </div>
-
-            <footer>
-                <?php require_once('footer.php') ?>
-            </footer>
         </div>
-    </div>
+    </main>
+
+    <footer>
+        <?php require_once('footer.php') ?>
+    </footer>
 </body>
 
 </html>

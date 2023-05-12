@@ -288,9 +288,8 @@ textarea {
 }
 
 .background {
-  background-image: url('../img/park01.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url('../img/gridRollercoaster2.png');
+  background-repeat: repeat;
   background-position: center;
 }
 
@@ -477,3 +476,27 @@ tr:nth-child(odd) {
   background-color: rgb(75, 75, 75);
   color: white;
 }
+
+/* Grid zodat footer down is */
+html, body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav" "main" "footer";
+  grid-template-rows: 100px 1fr 80px;
+}
+
+nav {
+  grid-area: nav;
+}
+main{
+  grid-area: main;
+  display: grid;
+}
+footer {
+  grid-area: footer;
+}
+
