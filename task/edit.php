@@ -1,39 +1,19 @@
+
+
 <head>
-    <?php
-    require_once('../head.php');
-    session_start();
-    if (isset($_SESSION['id'])) {
-        $idChecker = $_SESSION['id'];
-
-        require_once("../backend/conn.php");
-        $query = "SELECT * FROM users WHERE id=:id";
-        $statement = $conn->prepare($query);
-        $statement->execute([":id" => $idChecker]);
-
-        $userAccount = $statement->fetch(PDO::FETCH_ASSOC);
-
-    } else {
-        header("Location: ../accountSignin&Signup.php?msg=U bent nog niet ingelogd");
-    }
-    ?>
+    <?php require_once '../head.php'; ?>
+    <?php require_once("protection.php"); ?>
+    <title>Edit</title>
 </head>
 
-<?php
-require_once("../backend/conn.php");
-
-$id = $_GET['id'];
-$query = "SELECT * FROM taken WHERE id = :id";
-$statement = $conn->prepare($query);
-$statement->execute([":id" => $id]);
-$task = $statement->fetch(PDO::FETCH_ASSOC);
-?>
 
 <body>
-    <div class="background">
-        <div class="background-gradient">
-            <header>
-                <?php require_once("../header.php"); ?>
-            </header>
+    <header>
+        <?php require_once("../header.php"); ?>
+    </header>
+    <main>
+        <div class="background">
+
 
             <!-- create form -->
             <form action="../backend/taskController.php" method="post">
@@ -81,15 +61,27 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                     </div>
                     <div class="form-group">
                         <label for="color">Kleur: </label>
-                        <select name="color" id="color" >
-                            <option value="Groen"<?php if($task['kleur'] == "Groen") echo ('selected="selected"') ?>>Groen</option>
-                            <option value="Rood" <?php if($task['kleur'] == "Rood") echo ('selected="selected"') ?>>Rood</option>
-                            <option value="Blauw" <?php if($task['kleur'] == "Blauw") echo ('selected="selected"') ?>>Blauw</option>
-                            <option value="Paars"<?php if($task['kleur'] == "Paars") echo ('selected="selected"') ?>>Paars</option>
-                            <option value="Roze"<?php if($task['kleur'] == "Roze") echo ('selected="selected"') ?>>Roze</option>
-                            <option value="Oranje"<?php if($task['kleur'] == "Oranje") echo ('selected="selected"') ?>>Oranje</option>
-                        </select>
-                    </div>
+                        <select name="color" id="color">
+                            <option value="Groen" <?php if ($task['kleur'] == "Groen")
+                                echo ('selected="selected"') ?>>
+                                    Groen</option>
+                                <option value="Rood" <?php if ($task['kleur'] == "Rood")
+                                echo ('selected="selected"') ?>>Rood
+                                </option>
+                                <option value="Blauw" <?php if ($task['kleur'] == "Blauw")
+                                echo ('selected="selected"') ?>>
+                                    Blauw</option>
+                                <option value="Paars" <?php if ($task['kleur'] == "Paars")
+                                echo ('selected="selected"') ?>>
+                                    Paars</option>
+                                <option value="Roze" <?php if ($task['kleur'] == "Roze")
+                                echo ('selected="selected"') ?>>Roze
+                                </option>
+                                <option value="Oranje" <?php if ($task['kleur'] == "Oranje")
+                                echo ('selected="selected"') ?>>
+                                    Oranje</option>
+                            </select>
+                        </div>
                     <?php print_r($task) ?>
                     <div class="form-group">
                         <input type="submit" value="Wijzigen">
@@ -107,7 +99,9 @@ $task = $statement->fetch(PDO::FETCH_ASSOC);
                 </div>
             </form>
         </div>
-    </div>
+        </div>
+    </main>
+
     <footer>
         <?php require_once('../footer.php') ?>
     </footer>

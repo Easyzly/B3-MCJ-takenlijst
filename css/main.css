@@ -500,3 +500,7 @@ footer {
   grid-area: footer;
 }
 
+.LoginStyling p, p a{
+  text-decoration: none;
+  color: whitesmoke;
+}
